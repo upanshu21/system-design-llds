@@ -8,6 +8,6 @@ public interface Inventory {
 
     boolean removeProduct(Product product);
 
-    boolean removeProductByQuantity(Product product);
+    boolean removeProductByQuantity(Product product, int quantity);
 
 }

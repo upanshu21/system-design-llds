@@ -4,21 +4,23 @@ import com.patterns.lld.examples.vendingMachine.interfaces.payments.Payments;
 
 public class PaymentsImpl implements Payments {
 
+    private Integer treasury;
+
+    public PaymentsImpl() {
+        treasury = 0;
+    }
 
     @Override
-    public void collectMoney() {
-
-
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'collectMoney'");
+    public int collectMoney() {
+        int total = treasury;
+        treasury = 0;
+        return total;
     }
 
     @Override
     public boolean makePayment(int price) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'makePayment'");
+        treasury+=price;
+        return true;
     }
-
-
     
 }

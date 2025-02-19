@@ -2,7 +2,7 @@ package com.patterns.lld.examples.vendingMachine.interfaces.payments;
 
 public interface Payments {
 
-    void collectMoney();
+    int collectMoney();
 
     boolean makePayment(int price);
 
