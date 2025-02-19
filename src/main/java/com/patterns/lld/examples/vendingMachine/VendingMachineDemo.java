@@ -31,16 +31,17 @@ public class VendingMachineDemo {
         Product product2 = new Product.ProductBuilder("MilkyBar", null, 10).build();
         Product product3 = new Product.ProductBuilder("Gatorade", null, 10).build();
 
-        machineAdmin.addProduct(product1, 10, 10);
-        machineAdmin.addProduct(product2, 10, 10);
-        machineAdmin.addProduct(product3, 10, 10);
+        machineAdmin.addProduct(product1, 10);
+        machineAdmin.addProduct(product2, 10);
+        machineAdmin.addProduct(product3, 10);
 
         // object flow:
         machine.displayProduct();
-        int p1 = machine.selectProduct(product1.nameOfProduct);
-        int p2 = machine.selectProduct(product2.nameOfProduct);
-        machine.buyproductByMakingPayment(product1, p1);
-        machine.buyproductByMakingPayment(product2, p2);
+        int p1 = machine.selectProduct(product1);
+        int p2 = machine.selectProduct(product2);
+        // TO:DO error handling if product is not available or quantity is invalid
+        machine.buyproductByMakingPayment(product1, p1, 2);
+        machine.buyproductByMakingPayment(product2, p2, 2);
         machine.displayProduct();
 
     }

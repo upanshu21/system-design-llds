@@ -8,12 +8,13 @@ The machine should provide an interface for restocking products and collecting m
 The machine should handle exceptional scenarios, such as insufficient funds or out-of-stock products.
 
 
+Thought process behind building:
+1. Identify the actors.
+2. Identify the components that can have their own dynamic flow or meaning eg, inventory, payments.
+3. Create a high-level interaction flow, it gives you a good idea of the object calls will look like and how you can divide responsibilities. Top down approach is the way to go!
 
-(
 
-    Payments
-
-);
+High-level user machine interaction thought process, final can be seen in demo class:
 
 class VendingMachineDemo {
 
@@ -30,7 +31,14 @@ class VendingMachineDemo {
 
 }
 
-class VendingMachine {
 
-}
+Design Patterns used and concepts:
+
+1. Facade pattern: The MachineImpl class acts as a façade by coordinating between the payment and inventory subsystems. This simplifies the client’s interaction with the vending machine functionality.
+
+2. Builder Pattern: The Product class implements a builder pattern and enables easy construction of Products.
+
+3. Interface-Based Design: By using interfaces (Inventory, Machine, MachineAdmin, Payments), we enable loose coupling and easier swapping of implementations. 
+
+4. Dependency Injection: Both MachineImpl and MachineAdminImpl receive their dependencies via constructor injection, which facilitates testing and future extension.
 

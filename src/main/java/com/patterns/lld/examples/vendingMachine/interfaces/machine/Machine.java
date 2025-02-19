@@ -6,8 +6,8 @@ public interface Machine {
 
     void displayProduct();
 
-    int selectProduct(String product);
+    int selectProduct(Product product);
 
-    boolean buyproductByMakingPayment(Product product, int price);
+    boolean buyproductByMakingPayment(Product product, int price, int quantity);
 
 }

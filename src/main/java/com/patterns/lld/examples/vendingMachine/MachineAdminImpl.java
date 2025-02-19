@@ -15,8 +15,8 @@ public class MachineAdminImpl implements MachineAdmin {
     }
     
     @Override
-    public boolean addProduct(Product product, int quantity, int price) {
-        inventory.addProduct(product, quantity, price);
+    public boolean addProduct(Product product, int quantity) {
+        inventory.addProducts(product, quantity);
         return true;
     }
 

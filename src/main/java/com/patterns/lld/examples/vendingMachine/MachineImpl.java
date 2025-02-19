@@ -1,8 +1,5 @@
 package com.patterns.lld.examples.vendingMachine;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import com.patterns.lld.examples.vendingMachine.interfaces.inventory.Inventory;
 import com.patterns.lld.examples.vendingMachine.interfaces.machine.Machine;
 import com.patterns.lld.examples.vendingMachine.interfaces.payments.Payments;
@@ -19,21 +16,20 @@ public class MachineImpl implements Machine {
 
     @Override
     public void displayProduct() {
-   
+        inventory.displayProducts();
     }
 
     @Override
-    public int selectProduct(String product) {
-
-            return 0;
-
+    public int selectProduct(Product product) {
+        return inventory.getProducts(product);
     }
 
     @Override
-    public boolean buyproductByMakingPayment(Product product, int price) {
+    public boolean buyproductByMakingPayment(Product product, int price, int quantity) {
+        if (payment.makePayment(price) && inventory.removeProductByQuantity(product, quantity)) {
+            return true;
+        }
         return false;
-
     }
-
 
 }

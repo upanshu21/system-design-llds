@@ -6,7 +6,7 @@ public interface MachineAdmin {
     
     boolean autorized();
 
-    boolean addProduct(Product product, int quantity, int price);
+    boolean addProduct(Product product, int quantity);
 
     int collectMoney();
     
