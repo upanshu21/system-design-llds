@@ -21,6 +21,7 @@ public class SubscriptionManager {
     public boolean unsubscribe(User user, INotificationsChannel channel) {
         Set<INotificationsChannel> userSubscriptions = subscriptions.get(user.getUuid());
         if (userSubscriptions != null && userSubscriptions.remove(channel)) {
+            System.out.println(user.getName() + " unsubscribed from " + channel.getClass().getSimpleName());
             return true;
         }
         System.out.println("Failed or no subscription present");
