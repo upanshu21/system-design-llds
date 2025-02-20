@@ -1,7 +1,6 @@
 package com.patterns.lld.examples.notificationsSystem;
 
 import com.patterns.lld.examples.notificationsSystem.Notification.Notification;
-import com.patterns.lld.examples.notificationsSystem.Notification.NotificationType;
 import com.patterns.lld.examples.notificationsSystem.NotificationChannels.EmailNotificationsChannel;
 import com.patterns.lld.examples.notificationsSystem.NotificationChannels.INotificationsChannel;
 import com.patterns.lld.examples.notificationsSystem.NotificationChannels.PushNotificationsChannel;

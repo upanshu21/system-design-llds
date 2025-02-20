@@ -22,6 +22,7 @@ public class TicTacToeDemo {
 
         TicTacToe ticTacToe = new TicTacToe(size, player1, player2);
         ticTacToe.play();
+        scanner.close();
     }
     
 }
