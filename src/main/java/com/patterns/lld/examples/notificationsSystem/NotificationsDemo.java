@@ -25,7 +25,6 @@ public class NotificationsDemo {
 
         manager.subscribe(user1, push);
         manager.subscribe(user1, sms);
-        manager.subscribe(user1, email);
 
         Notification notification = new Notification("Please fill out the tax form on priority");
         notificationSystem.notifyUser(user1, notification);
