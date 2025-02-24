@@ -20,13 +20,15 @@ public class SimpleFileSearchExample {
 
         // Create specifications: search for files with .txt extension and "report" in the name.
         Specification spec = new AndSpecification(
-            new ExtensionSpecification("txt"),
-            new NameSpecification("report")
+            new ExtensionSpecification("doc"),
+            new NameSpecification("json")
         );
+
+        Specification spec2 = new NameSpecification("report");
 
         // Perform the search.
         FileSearchService service = new FileSearchService();
-        List<File> foundFiles = service.search(root, spec);
+        List<File> foundFiles = service.search(root, spec2);
 
         // Print results.
         for (File file : foundFiles) {
