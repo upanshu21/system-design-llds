@@ -12,7 +12,7 @@ public class LockerFacilityImpl implements LockerFacility {
     private HashMap<LockerSize, Integer> tracker;
     private String location;
 
-    private LockerFacilityImpl(String location) {
+    public LockerFacilityImpl(String location) {
         this.tracker.put(LockerSize.LARGE, 50);
         this.tracker.put(LockerSize.SMALL, 25);
         this.tracker.put(LockerSize.MEDIUM, 25);

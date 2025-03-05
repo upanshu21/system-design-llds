@@ -3,6 +3,7 @@ package com.patterns.lld.examples.notificationsSystem;
 import com.patterns.lld.examples.notificationsSystem.Notification.Notification;
 import com.patterns.lld.examples.notificationsSystem.NotificationChannels.EmailNotificationsChannel;
 import com.patterns.lld.examples.notificationsSystem.NotificationChannels.INotificationsChannel;
+import com.patterns.lld.examples.notificationsSystem.NotificationChannels.NotificationsFactory;
 import com.patterns.lld.examples.notificationsSystem.NotificationChannels.PushNotificationsChannel;
 import com.patterns.lld.examples.notificationsSystem.NotificationChannels.SmsNotificationsChannel;
 import com.patterns.lld.examples.notificationsSystem.User.User;
@@ -12,9 +13,9 @@ public class NotificationsDemo {
 
     public static void main(String[] args) {
 
-        INotificationsChannel email = new EmailNotificationsChannel();
-        INotificationsChannel sms = new SmsNotificationsChannel();
-        INotificationsChannel push = new PushNotificationsChannel();
+        INotificationsChannel email = NotificationsFactory.createChannel("email");
+        INotificationsChannel sms = NotificationsFactory.createChannel("sms");
+        INotificationsChannel push = NotificationsFactory.createChannel("push");
 
         SubscriptionManager manager = new SubscriptionManager();
         NotificationSystem notificationSystem = new NotificationSystem(manager);
